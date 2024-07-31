@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://www.kaggle.com/c/bird-audio-detection/data -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Bird audio detection | Kaggle</title>
+  
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Detect if a short audio segment has a bird sound in it. ">
+  <meta name="turbolinks-cache-control" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+  <meta name="theme-color" content="#008ABC">
+  <script src="./Bird audio detection _ Kaggle_files/cb=gapi.loaded_0" nonce="" async=""></script><script type="text/javascript" async="" src="./Bird audio detection _ Kaggle_files/js" nonce=""></script><script type="text/javascript" async="" src="./Bird audio detection _ Kaggle_files/analytics.js.download" nonce=""></script><script nonce="" type="text/javascript">
+    window["pageRequestStartTime"] = 1641193706402;
+    window["pageRequestEndTime"] = 1641193706653;
+    window["initialPageLoadStartTime"] = new Date().getTime();
+  </script>
+  <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin="anonymous"><link rel="preconnect" href="https://stats.g.doubleclick.net/"><link rel="preconnect" href="https://storage.googleapis.com/"><link rel="preconnect" href="https://apis.google.com/">
+  <link href="https://www.kaggle.com/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link rel="manifest" href="https://www.kaggle.com/static/json/manifest.json" crossorigin="use-credentials">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./Bird audio detection _ Kaggle_files/icon" rel="preload" as="style">
+  <link href="./Bird audio detection _ Kaggle_files/css" rel="preload" as="style">
+  <link href="./Bird audio detection _ Kaggle_files/icon" rel="stylesheet" media="all" id="async-google-font-1">
+  <link href="./Bird audio detection _ Kaggle_files/css" rel="stylesheet" media="all" id="async-google-font-2">
+  <script nonce="" type="text/javascript">
+    const styleSheetIds = ["async-google-font-1", "async-google-font-2"];
+    styleSheetIds.forEach(function (id) {
+      document.getElementById(id).addEventListener("load", function() {
+        this.media = "all";
+      });
+    });
+  </script>
+
+    <link rel="stylesheet" type="text/css" href="./Bird audio detection _ Kaggle_files/vendor.css">
+    <link rel="stylesheet" type="text/css" href="./Bird audio detection _ Kaggle_files/app.css">
+  
+    
+ 
+      <script nonce="">
+        try{(function(a,s,y,n,c,h,i,d,e){d=s.createElement("style");
+        d.appendChild(s.createTextNode(""));s.head.appendChild(d);d=d.sheet;
+        y=y.map(x => d.insertRule(x + "{ opacity: 0 !important }"));
+        h.start=1*new Date;h.end=i=function(){y.forEach(x => x<d.cssRules.length ? d.deleteRule(x) : {})};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document,['.site-header-react__nav'],'dataLayer',2000,{'GTM-52LNT9S':true});}catch(ex){}
+    </script><style></style>
+    <script nonce="">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-12629138-1', {
+            'optimize_id': 'GTM-52LNT9S',
+            'displayFeaturesTask': null,
+            'send_page_view': false,
+            'content_group1': 'Competitions'
+        });
+    </script>
+    <script nonce="" async="" src="./Bird audio detection _ Kaggle_files/js(1)"></script>
+
+  
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@kaggle">
+    <meta name="og:url" content="https://kaggle.com/c/bird-audio-detection">
+    <meta name="og:title" content="Bird audio detection">
+    <meta name="og:description" content="Detect if a short audio segment has a bird sound in it. ">
+    <meta name="og:image" content="https://storage.googleapis.com/kaggle-competitions/kaggle/23645/logos/thumb76_76.png?t=2020-10-29-14-04-27">
+
+
+  <meta name="twitter:site" content="@Kaggle"> 
+  
+    
+
+  
+    
+
+  
+    
+    
+<script nonce="" type="text/javascript">
+    var Kaggle = window.Kaggle || {};
+
+    Kaggle.Current = {
+        antiForgeryToken: 'CfDJ8LdUzqlsSWBPr4Ce3rb9VL-VYyGi8Rxjg9GmibT3g60B3D8qCXBshg8o0aBvUY5PwR3zpk5eaAmz-IjLIuInk8zuc9_pcVeNEv3nFEtmh76HoJr6_hD_iE_cy4NhUVl0lZ6KL18-lNc13HOznhcejDU',
+        isAnonymous: true,
+        analyticsToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDExOTQ2MDYsIlVzZXJJZCI6MH0.S570JJKZTS6-2fJvb-oDUKndeQmkm5kejpm-fUZ4xVs',
+        analyticsTokenExpiry: 15,
+        
+        
+        
+        
+        
+        
+        
+        enableRapidash: true, 
+    }
+        Kaggle.Current.log = function(){};
+        Kaggle.Current.warn = function(){};
+
+    var decodeUserDisplayName = function () {
+        var escapedUserDisplayName = Kaggle.Current.userDisplayNameEscaped || "";
+        try {
+            var textVersion = new DOMParser().parseFromString(escapedUserDisplayName, "text/html").documentElement.textContent;
+            if (textVersion) {
+                return textVersion;
+            }
+        } catch(ex) {}
+        return escapedUserDisplayName;
+    }
+    Kaggle.Current.userDisplayName = decodeUserDisplayName();
+</script>
+
+    
+
+<script nonce="" type="text/javascript">
+    var Kaggle = window.Kaggle || {};
+    Kaggle.PageMessages = [];
+</script>
+
+
+
+    <script nonce="">window['useKaggleAnalytics'] = true;</script>
+
+  <script id="gapi-target" nonce="" src="./Bird audio detection _ Kaggle_files/api.js.download" defer="" async="" gapi_processed="true"></script>
+  <script nonce="" src="./Bird audio detection _ Kaggle_files/runtime.js.download" data-turbolinks-track="reload"></script>
+  <script nonce="" src="./Bird audio detection _ Kaggle_files/vendor.js.download" data-turbolinks-track="reload"></script>
+  <script nonce="" src="./Bird audio detection _ Kaggle_files/app.js.download" data-turbolinks-track="reload"></script>
+    <script nonce="" type="text/javascript">
+      window.kaggleStackdriverConfig = {
+        key: 'AIzaSyA4eNqUdRRskJsCZWVz-qL655Xa5JEMreE',
+        projectId: 'kaggle-161607',
+        service: 'web-fe',
+        version: 'ci',
+        userId: '0'
+      }
+    </script>
+<link rel="stylesheet" type="text/css" href="./Bird audio detection _ Kaggle_files/4606.0b070b6d0627c3947756.css"><link rel="stylesheet" type="text/css" href="./Bird audio detection _ Kaggle_files/2775.bb0f3cd266fcb6b8c18b.css"><link rel="stylesheet" type="text/css" href="./Bird audio detection _ Kaggle_files/8405.4c09ef25a0bcc830f0b8.css"><link rel="stylesheet" type="text/css" href="./Bird audio detection _ Kaggle_files/2799.40cd53cc41bfe35384e1.css"><style data-styled="active" data-styled-version="5.3.0"></style><link rel="stylesheet" type="text/css" href="./Bird audio detection _ Kaggle_files/4.203e4ddbf8e58555799c.css"><link rel="stylesheet" type="text/css" href="./Bird audio detection _ Kaggle_files/15.0ee55c723b2d8ac67383.css"><link rel="stylesheet" type="text/css" href="./Bird audio detection _ Kaggle_files/762.3092613c9d0debaa9331.css"><style data-react-tooltip="true">.__react_component_tooltip {
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 13px;
+  left: -999em;
+  opacity: 0;
+  padding: 8px 21px;
+  position: fixed;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+  top: -999em;
+  visibility: hidden;
+  z-index: 999;
+}
+.__react_component_tooltip.allow_hover, .__react_component_tooltip.allow_click {
+  pointer-events: auto;
+}
+.__react_component_tooltip::before, .__react_component_tooltip::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+.__react_component_tooltip.show {
+  opacity: 0.9;
+  margin-top: 0;
+  margin-left: 0;
+  visibility: visible;
+}
+.__react_component_tooltip.place-top::before {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  bottom: -8px;
+  left: 50%;
+  margin-left: -10px;
+}
+.__react_component_tooltip.place-bottom::before {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  top: -8px;
+  left: 50%;
+  margin-left: -10px;
+}
+.__react_component_tooltip.place-left::before {
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  right: -8px;
+  top: 50%;
+  margin-top: -5px;
+}
+.__react_component_tooltip.place-right::before {
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  left: -8px;
+  top: 50%;
+  margin-top: -5px;
+}
+.__react_component_tooltip .multi-line {
+  display: block;
+  padding: 2px 0;
+  text-align: center;
+}</style></head>
+
+<body data-turbolinks="false">
+  <main>
+    
+
+
+
+
+
+
+<div id="site-container"><div style="--mdc-theme-on-primary:#fff; --mdc-theme-on-surface:rgba(0, 0, 0, 0.87); --mdc-theme-text-primary-on-background:rgba(0, 0, 0, 0.87); --mdc-theme-text-secondary-on-background:rgba(0, 0, 0, 0.54); --mdc-theme-text-hint-on-background:rgba(0, 0, 0, 0.38); --mdc-theme-text-disabled-on-background:rgba(0, 0, 0, 0.38); --mdc-theme-text-icon-on-background:rgba(0, 0, 0, 0.38); --mdc-theme-primary:#20BEFF; --mdc-theme-error:#F58B8A; --mdc-theme-background:#F8F8F8; --mdc-theme-surface:#fff; --mdc-theme-primary-bg:#20BEFF; --mdc-theme-secondary-bg:#919294;"><div class="sc-ellfGf eQnPJL"><div class="sc-kizEQm fojYHw"><div class="sc-cbeScs fNvcGj"><div class="sc-hkeOVe grtTEg"><button aria-label="menu" class="sc-jSFjdj SCuyd undefined google-material-icons">menu</button></div><a href="https://www.kaggle.com/c/bird-audio-detection/data#site-content" class="sc-htmcrh emRwHY">Skip to<br>content</a><div class="sc-gVFcvn iAkyYK"><a href="https://www.kaggle.com/"><img src="./Bird audio detection _ Kaggle_files/site-logo.png" alt="Kaggle" class="sc-dTSzeu krkYvd"></a></div></div></div><div class="sc-cKRKFl kSUooD"><div class="sc-iIgjPs czWPLt"><div class="sc-jtiXyc bdGDdI"><div class="sc-iGkqmO hLdRoL"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy iExPwm sc-kTCsyW kmgTrK">search</i><input placeholder="Search" aria-label="Search" class="sc-irKDMX fyRspk" value=""></div></div></div><div class="sc-gstuGz tcgHY"><div class="sc-fmdNqN hyACbC"><div class="sc-ljsmAU mJiLy"><a href="https://www.kaggle.com/account/login?phase=startSignInTab&amp;returnUrl=%2Fc%2Fbird-audio-detection%2Fdata" class="sc-jlZJtj QgNfY"><button class="sc-eEVmNe dGwAHS" tabindex="0" role="button"><span class="sc-jJMGnK sc-hiKfDv lkfHZi dRsyqq">Sign In</span></button></a></div><div class="sc-ljsmAU mJiLy"><a href="https://www.kaggle.com/account/login?phase=startRegisterTab&amp;returnUrl=%2Fc%2Fbird-audio-detection%2Fdata" class="sc-jlZJtj QgNfY"><button class="sc-eEVmNe evMPpD" tabindex="0" role="button"><span class="sc-jJMGnK sc-hiKfDv lkfHZi dRsyqq">Register</span></button></a></div></div></div></div></div><div class="sc-jLqRGG sc-fxFQKN gtTSsX cWNuFw"><div class="sc-fyGvY fLibQH"><div class="sc-cbeScs fNvcGj"><div class="sc-hkeOVe grtTEg"><button aria-label="menu" class="sc-jSFjdj SCuyd undefined google-material-icons">menu</button></div><a href="https://www.kaggle.com/c/bird-audio-detection/data#site-content" class="sc-htmcrh emRwHY">Skip to<br>content</a><div class="sc-gVFcvn iAkyYK"><a href="https://www.kaggle.com/"><img src="./Bird audio detection _ Kaggle_files/site-logo.png" alt="Kaggle" class="sc-dTSzeu krkYvd"></a></div></div></div><div class="sc-cjzNjn cIJaKN"><button class="sc-bUQyIj jUQESp"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><path fill-rule="evenodd" clip-rule="evenodd" d="M20 30L20 16L16 20L16 30L20 30Z" fill="#20BEFF"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M20 20L30 20L30 16L20 16L20 20Z" fill="#20BEFF"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M16 20L20 16L15.937 16L6 16L6 20L16 20Z" fill="#20BEFF"></path><rect x="20" y="16" width="4" height="10" transform="rotate(-180 20 16)" fill="#20BEFF"></rect></svg><span class="sc-iJCRrE sc-giAqHp sc-tsGVs iDwXPD bYgUJS hNouay">Create</span></button><div aria-hidden="true" class="mdc-menu sc-jHNicF bnmAXo sc-dSnXvR dzBcKB mdc-menu-surface" style="transform-origin: left top; left: 0px; top: 0px; max-height: 690px;"><div role="menu" class="mdc-list mdc-menu__items mdc-list"><div role="menuitem" tabindex="0" class="sc-GvhzO bpDBPH mdc-ripple-upgraded sc-GvhzO bpDBPH mdc-list-item"><div class="sc-bXexck kmvQjn"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy iExPwm sc-gsWcmt grZHMV">code</i><p class="sc-bCwfaz sc-iwajpm jLqmUy kydRHc">New Notebook</p></div></div><div role="menuitem" tabindex="0" class="sc-GvhzO bpDBPH mdc-ripple-upgraded sc-GvhzO bpDBPH mdc-list-item"><div class="sc-bXexck kmvQjn"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy iExPwm sc-gsWcmt grZHMV">table_chart</i><p class="sc-bCwfaz sc-iwajpm jLqmUy kydRHc">New Dataset</p></div></div></div></div></div><div class="sc-igOmtu bDNEth"><div class="sc-gGuRsA fEtmZj"><div class="sc-gGGFjW gAApEQ"><div class="sc-dksuTV fUsfKe"><div class="sc-jtiXyc bdGDdI"><div class="sc-iGkqmO hLdRoL"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy iExPwm sc-kTCsyW kmgTrK">search</i><input placeholder="Search" aria-label="Search" class="sc-irKDMX fyRspk" value=""></div></div></div><ul class="km-list"><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-cGKJhA fHgjJA"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy yTsEt sc-JsfZP kBcPwt">explore</i><p class="sc-kfYoZR sc-fKgJPI gpHTvJ cxbltl" style="padding-left: 20px;">Home</p></a></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif gGxnHS sc-cGKJhA fHgjJA"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/competitions"><i emphasis="high" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy iExPwm sc-JsfZP kBcPwt">emoji_events</i><p class="sc-kfYoZR sc-fKgJPI jaxPpm cxbltl" style="padding-left: 20px;">Competitions</p><div class="sc-hYRTwp kxklKl"></div></a></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-cGKJhA fHgjJA"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/datasets"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy yTsEt sc-JsfZP kBcPwt">table_chart</i><p class="sc-kfYoZR sc-fKgJPI gpHTvJ cxbltl" style="padding-left: 20px;">Datasets</p></a></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-cGKJhA fHgjJA"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/code"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy yTsEt sc-JsfZP kBcPwt">code</i><p class="sc-kfYoZR sc-fKgJPI gpHTvJ cxbltl" style="padding-left: 20px;">Code</p></a></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-cGKJhA fHgjJA"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/discussion"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy yTsEt sc-JsfZP kBcPwt">comment</i><p class="sc-kfYoZR sc-fKgJPI gpHTvJ cxbltl" style="padding-left: 20px;">Discussions</p></a></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-cGKJhA fHgjJA"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/learn"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy yTsEt sc-JsfZP kBcPwt">school</i><p class="sc-kfYoZR sc-fKgJPI gpHTvJ cxbltl" style="padding-left: 20px;">Courses</p></a></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-cGKJhA fHgjJA"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/c/bird-audio-detection/data#"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy yTsEt sc-JsfZP kBcPwt">expand_more</i><p class="sc-kfYoZR sc-fKgJPI gpHTvJ cxbltl" style="padding-left: 20px;">More</p></a></div></li></ul></div></div><div class="sc-dbXCOC fCfyBJ"><div class="mdc-menu-surface--anchor"><button class="sc-XULlH dEiWYJ"><div class="sc-fulamw cQCBvw"><i emphasis="high" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy iExPwm sc-xQvhf lbZgxt">auto_awesome_motion</i><div color="#FAE041" class="sc-cskzLS CQKPy">0</div></div><p class="sc-kfYoZR sc-fKgJPI sc-jvCfEJ gpHTvJ cxbltl dBvUmt">View Active Events</p></button></div></div></div></div><div data-testid="searchContainer" class="sc-jOSyMn kPMeAs"><div></div><div class="sc-tQTSe bVoaPP"><div></div></div></div><div id="site-content" class="sc-hGwcmR fsfkoY"><div class="sc-iuImSO kjhMak"><div class="sc-bdnxRM dHFIQf"><div class="sc-gtsrHT jOwbqk">We use cookies on Kaggle to deliver our services, analyze web traffic, and improve your experience on the site. By using Kaggle, you agree to our use of cookies.</div><div class="sc-dlnjwi fTtXFy"><div class="sc-hKFxyN brnUiQ">Got it</div><a href="https://www.kaggle.com/cookies" class="sc-eCApnc iylGhi"><div class="sc-hKFxyN brnUiQ">Learn more</div></a></div></div></div><div id="site-body" class="">
+    
+
+
+<div data-component-name="CompetitionContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"isOngoingCompetition":false,"competitionId":23645,"competitionType":"prediction","competitionTitle":"Bird audio detection","briefDescription":"Detect if a short audio segment has a bird sound in it. ","competitionHeaderImageUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/23645/logos/header.png?t=2020-10-29-14-11-00","organizationId":0,"organizationName":null,"organizationThumbnailUrl":null,"hasAcceptedRules":false,"dateEnabled":"2020-10-30T07:59:22.257Z","deadline":"2020-12-06T23:59:00Z","mergerDeadline":"2020-12-06T23:59:00Z","newEntrantDeadline":null,"rewardQuantity":0.0,"rewardTypeName":null,"totalTeams":90,"isInClass":true,"hostSegment":"inClass","canEdit":false,"canEditMetadata":false,"rules":{"id":110890,"postId":7591461,"content":"**Note bold:** Violation of the rules listed here, will lead to the rejection of your submission, irrespectively of the score or anything else. \n\nFor your participation to this InClass Kaggle competition, you are not allowed to: \n\n- Use any other data than the data provided in this InClass Kaggle competition.\n- Use pre-trained models, audio or general models. \n- Only teams of two (2) people are allowed.","mimeType":"text/markdown","name":"rules","isPublished":null},"dataIntro":{"id":110887,"postId":7591458,"content":"# Testing data of the competition\n\nHere you can find the testing data of the competition. For a explanation of the data, please refer to the [Datasets page](https://www.kaggle.com/c/bird-audio-detection/overview/datasets). ","mimeType":"text/markdown","name":"data-description","isPublished":null},"competitionSlug":"bird-audio-detection","numPrizes":1,"leaderboardPercentage":50,"hasLimitedParticipation":true,"discussion":{"canDownvote":false,"dataUrl":"/forums/963142/topics.json","id":963142,"showSubscribeButton":false,"isSubscribed":false,"subscription":"unsubscribe","paramValues":{"page":1,"search":null,"group":"all","sortBy":"hot","category":"all"}},"competitionThumbnailImageUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/23645/logos/thumb76_76.png?t=2020-10-29-14-04-27","newTopic":{"allowAttachments":false,"authorTier":"novice","authorType":"topic","forumId":963142,"parentName":"Bird audio detection","parentUrl":"/c/bird-audio-detection/discussion","isPrivate":false},"numScoredSubmissions":2,"maxDailySubmissions":5,"maxDailySubmissionsResetDate":"2022-01-04T00:00:00Z","remainingDailySubmissions":null,"totalSolutionRows":4512,"team":null,"maxTeamSize":2147483647,"topicTitle":null,"totalCompetitors":164,"totalEntries":1509,"countsTowardsRanking":false,"countsTowardsTiers":false,"evaluationAlgorithm":{"id":5,"abbreviation":"AUC","name":"Area Under Receiver Operating Characteristic Curve","description":"Measures discrimination. Calculates how well an algorithm separates true positives from false positives. Overall good metric for classification problems. Has range [0.5, 1.0]","isMax":true,"isPublic":true,"submissionFileFormatId":0,"competitionId":0,"requiresSameRowCountInSubmissionAndSolution":true,"solutionSchema":"\u003cdataFrameSchema\u003e\u003ccolumnDefinitions\u003e\u003ccolumnDefinition name=\u0022Id\u0022 isRequired=\u0022true\u0022 isKey=\u0022true\u0022 requiredDataType=\u0022System.Reflection.Missing\u0022 /\u003e\u003ccolumnDefinition name=\u0022Expected\u0022 allowMultipleColumns=\u0022true\u0022 isRequired=\u0022true\u0022 requiredDataType=\u0022System.Double\u0022 /\u003e\u003c/columnDefinitions\u003e\u003c/dataFrameSchema\u003e","submissionSchema":"\u003cdataFrameSchema\u003e\u003ccolumnDefinitions\u003e\u003ccolumnDefinition name=\u0022Id\u0022 isRequired=\u0022true\u0022 isKey=\u0022true\u0022 requiredDataType=\u0022System.Reflection.Missing\u0022 /\u003e\u003ccolumnDefinition name=\u0022Predicted\u0022 allowMultipleColumns=\u0022true\u0022 isRequired=\u0022true\u0022 requiredDataType=\u0022System.Double\u0022 /\u003e\u003c/columnDefinitions\u003e\u003c/dataFrameSchema\u003e","parametersSchema":"\u003cparametersSchema type=\u0022Kaggle.Metrics.EmptyEvaluationAlgorithmParameters\u0022 /\u003e","dateModified":"2021-12-14T18:07:28.8945573Z","requiresSpecialHandling":false,"isEnvironment":false,"environmentConfiguration":null,"environmentNumPlayersSpec":null,"environmentRenderType":"json"},"allowPrivateLeaderboardDisplay":true,"isCreatingCompetition":false,"pages":[{"id":110888,"postId":7602789,"content":"# Bird Audio Detection inClass Kaggle Challenge\n\n### Welcome to the inClass Kaggle competition of the DATA.ML.200-2020-2021-1 Pattern Recognition and Machine Learning course.\n\nWildlife monitoring is an important environmental task, where different monitoring systems are deployed in remote areas, in order to collect data of wildlife in vivo. Audio seems to be a very attractive modality, since an audio recording is not affected by different lighting conditions and the, typical, dense vegetation. After having recorded the audio data, then scientists can start process them. \n\nOne of the difficulties of processing audio data is that a person has to listen the whole audio recording. This is in contrast with an image, where a person can look an image at one glance, and then annotate it. For example, by just looking an image one can, usually, say quite fast if there is a bird in it. Though, one has to listen an audio file until they listen a bird. The above clearly indicates that if there is a system to quickly decide if an audio segment has or not at least one bird in it, then a first and quick filtering could be performed overt lots of audio samples. Afterwards, the audio samples with bird sounds can be furthered processed by the corresponding scientists.\n\nThis competition is about deciding if an audio sample of 10 seconds has a bird sound in it or not, and is based on the [Bird Audio Detection task](http://dcase.community/challenge2018/task-bird-audio-detection), of the DCASE 2018 Challenge. The evaluation will be based on the same metric as in the Bird Audio Detection task, though a subset of the dataset will be used here. \n\nFor information and instruction on how to acquire and use the datasets, please see the [Datasets page](https://www.kaggle.com/c/bird-audio-detection/overview/datasets). For information about the evaluation of your methods, please see the [Evaluation page](https://www.kaggle.com/c/bird-audio-detection/overview/evaluation). You can find some tips, tricks, and guidelines at the [corresponding page](https://www.kaggle.com/c/bird-audio-detection/overview/tips-tricks-and-some-guidelines). \n\nFinally, make sure that you read and accept the rules at the [Rules page](https://www.kaggle.com/c/bird-audio-detection/rules) of the competition. ","mimeType":"text/markdown","name":"Description","isPublished":true},{"id":111052,"postId":7803383,"content":"# Data and Datasets for Bird Audio Detection InClass Kaggle competition\n\nThree different datasets will be given, two to be used for the optimization and one for the evaluation of your methods. You will have to download the training datasets from provided links, and the evaluation dataset from the data in this inClass Kaggle competition. \n\n## Training datasets\n\nTraining datasets consist of 10 second long audio samples, and associated labels for each audio sample. The labels are in the form \u00220\u0022 or \u00221\u0022, where \u00221\u0022 means that there is a bird sound in the 10 second long audio sample. \n\n### Obtaining the training datasets\n\nYou can get the training datasets from: \n\n- Dataset 1, Field recordings, worldwide (\u0022freefield1010\u0022) dataset: [audio](https://archive.org/download/ff1010bird/ff1010bird_wav.zip) (5.8 GB) and [labels](https://ndownloader.figshare.com/files/10853303). If the direct download is not working good for you, maybe you can try this [bittorrent link](https://archive.org/download/ff1010bird/ff1010bird_archive.torrent). \n- Dataset 2, Crowdsourced dataset, UK (\u0022warblrb10k\u0022) dataset: [audio](https://archive.org/download/warblrb10k_public/warblrb10k_public_wav.zip) (4.3 GB) and [labels](https://ndownloader.figshare.com/files/10853306). If the direct download is not working good for you, maybe you can try this [bittorrent link](https://archive.org/download/warblrb10k_public/warblrb10k_public_archive.torrent)\n\nThe above two datasets are the first two datasets used in the Bird Audio Detection task of DCASE2018 Challenge. \n\n### Using the training datasets\n\nFor this competition, you have to create a method that takes as an input a 10 second long audio sample, and outputs the probability of having a bird audio in the input audio sample. \n\nYou are strongly advised to not use raw audio data as the input to your method. Instead, you should extract some audio features for the audio sample, and use these features as input to your method. A typical feature is the Mel band energies, either as mel band energies or log-scaled (referred to as log-mel band energies). To extract these features, you can use the [librosa Python library](https://librosa.org/doc/latest/index.html). \n\nSpecifically, you will need the [function to load audio](https://librosa.org/doc/latest/generated/librosa.load.html#librosa.load) and the [function to extract the mel band energies](https://librosa.org/doc/latest/generated/librosa.feature.melspectrogram.html#librosa.feature.melspectrogram). Then, you can just call the `log` function of `numpy`, in order to have log-mel band energies. \n\n\n## Testing dataset\n\nThe testing dataset is the \u0022Bird Vocalisation Activity (BiVA) database: annotated soundscapes from the Chernobyl Exclusion Zone\u0022 [1], which contains data supplied by Natural Environment Research Council, and is available under the [Open Government Licence v3](http://www.nationalarchives.gov.uk/doc/open-government-licence).\n\n### Obtaining the testing dataset\n\nYou can access the dataset from the [Data tab](https://www.kaggle.com/c/bird-audio-detection/data) of this InClass Kaggle competition. For the needs of this competition, we already have processed the evaluation dataset, splitting it in 10 second long audio files. For your convenience, all audio files are already saved as numpy arrays. This means that you can load the data using numpy\u0027s load function. \n\n### Using the testing dataset\n\nFor the testing dataset, you will have to extract the same features as you did for the training datasets. Then, you will have to use the extracted features as input to your system, and get the outputs for each example. \n\nIn order to have your method evaluated, you will have to submit a CSV file with columns: \n\n- Predicted, where you should have the probability of having a bird audio in the input audio sample. \n- ID, where you should have the ID of the audio file that corresponds to the prediction of your system. \n\n## References\n\n[1] Kendrick, P.; Barçante, L.; Beresford, N.A.; Gashchak, S.; Wood, M.D. (2018). Bird Vocalisation Activity (BiVA) database: annotated soundscapes from the Chernobyl Exclusion Zone NERC Environmental Information Data Centre. https://doi.org/10.5285/be5639e9-75e9-4aa3-afdd-65ba80352591","mimeType":"text/markdown","name":"Datasets","isPublished":true},{"id":111053,"postId":7768437,"content":"# Evaluation of submitted results\n\nThe submitted results will be evaluated according to the [AUC (Area under the curve)](https://en.wikipedia.org/wiki/Receiver_operating_characteristic#Area_under_the_curve) metric. \n\nYou submission must be a CSV file, having two columns: \n\n1. A column named as \u0022ID\u0022, which will have the ID of the audio file (i.e. integers starting form 0 until 4511). ID values do not have to be sorted.\n2. A column named \u0022Predicted\u0022, which will have the output of your system for the corresponding audio file. The output of your system should not be thresholded. That is, the \u0022Predicted\u0022 column should contain the non-thresholded output of your system (i.e. the probability). ","mimeType":"text/markdown","name":"Evaluation","isPublished":true},{"id":111059,"postId":7776646,"content":"# Tips, Tricks, and Guidelines\n\n## Most important tip\n\nObserve your data! Take some time to listen the audio of the training datasets and understand the differences of the different classes, some noise/miss-annotations (if any), and the nature (in general) of your data\n\n## Input data pre-processing\n\n### Scale your data\nIf you observe  your data, you will see that the scale of the values differ for the various examples. A good practice for this competition, is to scale your data between -1 and 1. To do this, you can apply the following snippet: \n\n```python\n# assumed that you have:\n# import numpy as np\n\naudio_data = audio_data * 1/np.max(np.abs(audio_data))\n```\n\n### FFT Points, Overlap, and Amount of Mel bands\n\nTypical values for the amount of FFT points, for 44.1 kHz, is 1024.  The typical amount of overlap is 50% (i.e. 512 samples). Also, do not over do it with the Mel bands. 32 to 64 Mel bands will be enough for the task that you have here. Also, make sure that you use 44100/2 as the maximum frequency for the Mel filters. \n\nThe above are summarized in the following snippet for extracting the features: \n\n```python\nimport librosa\n\nkwargs_for_mel = {\u0027n_mels\u0027: 40}\nx = librosa.feature.melspectrogram(\n    y=audio_data, \n    sr=44100, \n    n_fft=1024, \n    hop_length=512, \n    **kwargs_for_mel)\n```\n\n### Shape of features\n\nIf you use the above snippets, then the shape of the features (i.e. `x`) will be `n_mels x time`. Usually and in audio, the shape of the data is `time x features`, i.e. `time x n_mels`. This doesn\u0027t change anything, if you know what each dimension of the features represents. Though, it will probably create inconsistency if you try to re-create existing methods/models. For that reason, you might want to consider doing the following: \n\n```python\nx = x.T\n```","mimeType":"text/markdown","name":"Tips, tricks, and some guidelines","isPublished":true},{"id":112463,"postId":7666973,"content":"# Useful Papers\n\nIn this section you can find different useful papers that are focusing on BAD and sound event detection. \n\n## Bird Audio Detection \n\n1. E. Çakır, S. Adavanne, G. Parascandolo, K. Drossos, and T. Virtanen, \u0022Convolutional recurrent neural networks for bird audio detection,\u0022 in EUSIPCO 2020, link: https://arxiv.org/pdf/1703.02317.pdf\n\n2. S. Adavanne, K. Drossos, E. Çakir, and T. Virtanen, \u0022Stacked convolutional and recurrent neural networks for bird audio detection,\u0022 in EUSIPCO 2020, link: https://arxiv.org/pdf/1706.02047.pdf\n\n3. D. Stowell, M. D. Wood, H. Pamuła, Y. Stylianou, and H. Glotin, \u0022Automatic acoustic detection of birds through deep learning: The first Bird Audio Detection challenge,\u0022 in Methods in Ecology and Evolution, No. 9 (168), 2018, link: https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210X.13103\n\n## Sound event detection\n\nTO BE FILLED","mimeType":"text/markdown","name":"Useful papers","isPublished":true}],"databundleVersionId":1638770,"databundleVersions":[],"submissionsAreDisabled":false,"hasLeaderboard":true,"finalLeaderboardHasBeenVerified":true,"witholdFinalLeaderboardUntilItHasBeenVerified":false,"isPrivate":false,"publicLeaderboardMessage":"","privateLeaderboardMessage":"","disablePrizeIndicator":false,"hasKernels":true,"hasSolutionFile":true,"userRankMultiplier":0.0,"needsPhoneVerification":false,"scoringIsMax":true,"rawDataUrl":"/c/23645/publicleaderboarddata.zip","canSubmitModel":false,"mySubmissionsCount":0,"mostRecentSubmissionStatus":null,"isCompetitionHost":false,"allowTeamMergers":true,"hostSegments":[],"hostSegmentTitle":"InClass","canParticipate":false,"isCompetitionPending":false,"competitionHasLaunched":true,"competitionHasEnded":true,"shareToken":null,"ownerTwitter":null,"externalCompetitionThumbnailImageUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/23645/logos/thumb76_76.png?t=2020-10-29-14-04-27","competitionUrl":"/c/bird-audio-detection","mergerDeadlineHasPassed":true,"categories":{"tags":[{"id":0,"name":"auc","fullPath":"","listingUrl":"","description":"Measures discrimination. Calculates how well an algorithm separates true positives from false positives. Overall good metric for classification problems. Has range [0.5, 1.0]","datasetCount":0,"competitionCount":0,"notebookCount":0,"tagUrl":"","displayName":"","fontAwesomeIcon":""}],"type":"competition"},"competitionHostClaims":{"readSettings":false,"writeSettings":false,"writeDescriptions":false,"writeDeadline":false,"readSubmissions":false,"writeSubmissions":false,"invalidateSubmissions":false,"rescoreSubmissions":false,"readEvaluation":false,"writeEvaluation":false,"writeTeamVisibility":false,"updateCategory":false,"launchCompetition":false,"writeBenchmarks":false,"writeTeamMergers":false,"isCompetitionHost":false},"newEntrantDeadlineHasPassed":false,"onlyAllowKernelSubmissions":false,"requiresSameRowCountInSubmissionAndSolution":true,"enableLazyLeaderboard":false,"rulesRequired":true,"usesSynchronousReruns":false,"modelFileName":null,"modelFileSizeBytes":0,"disableKernelsPublishing":false,"@wf": "Competitions.Legacy.CompetitionDtoWireFormat"});performance && performance.mark && performance.mark("CompetitionContainer.componentCouldBootstrap");</script>
+
+</div><div data-testid="competition-detail-render-tid" class="sc-kqfmhM jnEFwD competition"><div class="sc-czETjp jTJslD"><div class="competition-header__container"><div class="pageheader"><div class="pageheader__container competition-header"><div class="competition-header__top"><div class="competition-header__top-image" style="background-image: url(&quot;https://storage.googleapis.com/kaggle-competitions/kaggle/23645/logos/header.png?t=2020-10-29-14-11-00&quot;);"></div><div class="pageheader__top--safe"><div class="competition-header__classification"><div class="competition-header__classification-icon-wrapper"><div class="competition-header__classification-icon"><span class="fa fa-trophy"></span></div></div><p class="competition-header__classification-text">Community prediction Competition</p></div><div class="competition-header__meta"><div class="competition-header__info"><h1 class="competition-header__title">Bird audio detection</h1><h2 class="competition-header__subtitle">Detect if a short audio segment has a bird sound in it. </h2></div></div><div class="competition-header__details--no-org"><div class="competition-header__details--no-org"><ul class="horizontal-list"><li class="horizontal-list-item horizontal-list-item--bullet horizontal-list-item--default">90 teams</li><li class="horizontal-list-item horizontal-list-item--bullet horizontal-list-item--default"><span><span title="Mon Dec 07 2020 05:29:00 GMT+0530 (India Standard Time)">a year ago</span></span></li></ul></div></div></div></div><div class="sc-cVnwkp cVEIUH" style="height: 47px; width: 950px;"><div offset="64" class="sc-dYwns MOMZD"></div><div class="sc-ckkJqj dxoQIf" style="top: 64px; height: 47px; width: 950px;"><div class="pageheader__bottom pageheader__bottom"><div class="OverflowX_OverflowXWrapper--jgkcy4 bglLBl Header_PageHeaderOverflowX--5lh72e elylks"><div class="OverflowX_OverflowXBody--1whfcnd iXGPkf"><div class="competition-header__nav-wrapper"><nav class="pageheader__nav pageheader__nav--competition "><div class="pageheader__nav-wrapper"><a href="https://www.kaggle.com/c/bird-audio-detection/overview" title="overview" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--overview"><span><span>Overview</span></span></a><a href="https://www.kaggle.com/c/bird-audio-detection/data" title="data" class="pageheader__left-links pageheader__left-links--with-onclick pageheader__left-links--selected" id="pageheader-nav-item--data"><span><span>Data</span></span></a><a href="https://www.kaggle.com/c/bird-audio-detection/code" title="code" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--code"><span><span>Code</span></span></a><a href="https://www.kaggle.com/c/bird-audio-detection/discussion" title="discussion" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--discussion"><span><span>Discussion</span></span></a><a href="https://www.kaggle.com/c/bird-audio-detection/leaderboard" title="leaderboard" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--leaderboard"><span><span>Leaderboard</span></span></a><a href="https://www.kaggle.com/c/bird-audio-detection/rules" title="rules" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--rules"><span><span>Rules</span></span></a><div class="pageheader__right-links-wrapper"></div></div></nav><div class="mdc-menu-surface--anchor"><button aria-label="more_horiz" class="sc-jSFjdj ejQuUp sc-eQxmTn GrfUT Header_StyledMoreMenu--1faqvz0 htIAMf google-material-icons">more_horiz</button></div></div></div></div></div><div></div><div class="pageheader__transition"></div></div></div></div></div></div><div class="competition-data"><div class="sc-gBsxbr fXDSNW"><div class="sc-iiBnNu sc-dYXZXt bubwpO bPDngw">Data Description</div><div class="sc-hmvkKb dnlOxA"><div class="markdown-converter__text--rendered"><h1>Testing data of the competition</h1>
+
+<p>Here you can find the testing data of the competition. For a explanation of the data, please refer to the <a rel="nofollow" href="https://www.kaggle.com/c/bird-audio-detection/overview/datasets">Datasets page</a>. </p></div></div></div><div class="content-box content-box--no-title api-hint__box"><div class="content-box__content-section content-box__content-section--no-title api-hint__content"><div class="content-box__simple-content-box"><div class="content-box__simple-content"><div class="ApiHint_ApiHintContainer--eeaa7l eDvkpK"><span name="terminal" class="ApiHint_ApiHintIcon--iuknhd dNVATo fa fa-terminal"></span><span class="tooltip-multiline"><span class="tooltip-multiline__before" style="opacity: 0;"></span><div class="ApiHint_ApiHintCode--x0ova9 fwsOFC">kaggle competitions download -c bird-audio-detection</div><span class="tooltip-multiline__after" style="opacity: 0;"><div><div class="ApiHint_ApiHintTip--1dawgn1 giwamk">Use the Kaggle API to download the dataset.</div><div class="ApiHint_ApiHintTipSub--pasq8f jGpVUG">https://github.com/Kaggle/kaggle-api</div></div></span></span><div class="ApiHint_ApiHintRight--nuzt6p iJgxIh"><span class="tooltip-multiline tooltip-multiline--left"><span class="tooltip-multiline__before tooltip-multiline__before--left" style="opacity: 0;"></span><span name="clipboard" class="ApiHint_ApiHintIconCopy--5pbfvb eZODfJ fa fa-clipboard"></span><span class="tooltip-multiline__after tooltip-multiline__after--left" style="opacity: 0;"><span>Copy API command to clipboard</span></span></span><span class="tooltip-multiline tooltip-multiline--left"><span class="tooltip-multiline__before tooltip-multiline__before--left" style="opacity: 0;"></span><a href="https://github.com/Kaggle/kaggle-api" target="_blank"><span name="question" class="ApiHint_ApiHintIconInfo--1rbgamk cNLBAW fa fa-question"></span></a><span class="tooltip-multiline__after tooltip-multiline__after--left" style="opacity: 0;"><span>Kaggle API installation and documentation</span></span></span></div></div></div></div></div></div><div aria-live="assertive" aria-atomic="true" aria-hidden="true" class="sc-hHJmnm dGIVRW mdc-snackbar mdc-snackbar--leading"><div class="mdc-snackbar__surface"><div role="status" aria-live="polite" class="mdc-snackbar__label"><div style="display: none;"></div></div><div class="mdc-snackbar__actions"></div></div></div><div class="sc-hcQipo ctrGCh"><div class="sc-jSnXEk iyRMrf"><div class="sc-euCuyW gWdAzS"><div class="sc-cnHfGN ibAYCT"><div class="sc-czXtCA hYfXDL"><div class="sc-jXmttp dOKEup"><h6 class="sc-dIvrsQ sc-hHEiqL sc-bpSicm kSVYRu ccTnQh">Data Explorer</h6><p class="sc-bCwfaz sc-iwajpm sc-iNhhTb eTBoyV kydRHc falacX">8.66 GB</p></div><ul class="sc-cYJTpx ezXrHl"><ul class="sc-hlRuvT gYoBUN"><div role="button" class="sc-dPCCFf sc-eJxYtH ceHMqK enyhNG"><div class="sc-dMKGCJ gCWtpd"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-gKAaRy iExUpp">arrow_right</i></div><div class="sc-jRJwBy fDgyBX"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-gKAaRy iExUpp">folder</i></div><div class="sc-howSeU dSMNtX"><div class="sc-eirqVv gMXsZh sc-fWKQQV egPQFw" data-tip="true" data-for="tooltip_components_225357c2-0e48-459c-aef4-a66406144532" currentitem="false"><p class="sc-bCwfaz sc-iwajpm sc-jORAzc jLqmUy kydRHc gMyapF">audio</p><div class="__react_component_tooltip tdb3edd92-fa09-4a67-bc8d-648f02851226 place-top type-dark" id="tooltip_components_225357c2-0e48-459c-aef4-a66406144532" data-id="tooltip"><style aria-hidden="true">
+  	.tdb3edd92-fa09-4a67-bc8d-648f02851226 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.tdb3edd92-fa09-4a67-bc8d-648f02851226.place-top {
+        margin-top: -10px;
+    }
+    .tdb3edd92-fa09-4a67-bc8d-648f02851226.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .tdb3edd92-fa09-4a67-bc8d-648f02851226.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .tdb3edd92-fa09-4a67-bc8d-648f02851226.place-bottom {
+        margin-top: 10px;
+    }
+    .tdb3edd92-fa09-4a67-bc8d-648f02851226.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .tdb3edd92-fa09-4a67-bc8d-648f02851226.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .tdb3edd92-fa09-4a67-bc8d-648f02851226.place-left {
+        margin-left: -10px;
+    }
+    .tdb3edd92-fa09-4a67-bc8d-648f02851226.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .tdb3edd92-fa09-4a67-bc8d-648f02851226.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .tdb3edd92-fa09-4a67-bc8d-648f02851226.place-right {
+        margin-left: 10px;
+    }
+    .tdb3edd92-fa09-4a67-bc8d-648f02851226.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .tdb3edd92-fa09-4a67-bc8d-648f02851226.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  </style><div class="sc-lbVvki IEnHC">audio (4512 files)</div></div></div></div></div></ul></ul></div></div><div class="sc-gAOGNj jdPwGV"><h6 class="sc-dIvrsQ sc-hHEiqL sc-jfcRMW kSVYRu ccTnQh kplNSi">Summary</h6><div class="sc-clZjfd emHcxH"><div class="sc-bIa-DNb gODYbq"><div class="sc-dMKGCJ gCWtpd"><i color="#5F6368" sizevalue="18px" class="rmwc-icon google-material-icons sc-gKAaRy yTnNO sc-iiWOJD kiXMYW">arrow_drop_down</i></div><div class="sc-jRJwBy fDgyBX"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-gKAaRy iExUpp">folder</i></div><p class="sc-bCwfaz sc-iwajpm sc-bqYQTA eTBoyV kydRHc ffOpAS">4511 files</p></div><div class="sc-bIa-DNb dczjtv"><div class="sc-dMKGCJ gCWtpd"></div><div class="sc-jRJwBy fDgyBX"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-gKAaRy iExUpp">insert_drive_file</i></div><p class="sc-bCwfaz sc-iwajpm sc-uSNQh jLqmUy kydRHc iaXbWM">.npy</p><p class="sc-bCwfaz sc-iwajpm sc-cEgGQu jLqmUy kydRHc dbjbzI">4511</p></div></div></div><div class="sc-dJzGQm UYrQR"><button class="sc-eEVmNe ehZbNQ" tabindex="0" role="button" style="margin-bottom: 8px;"><i color="#FFFFFF" sizevalue="18px" class="rmwc-icon google-material-icons sc-gKAaRy eoZVBq">get_app</i><span class="sc-jJMGnK sc-hiKfDv lkfHZi dRsyqq">Download All</span></button></div></div><div class="sc-gahnWd dYkrMv"><div class="sc-gnEkum dKmVXL"><div class="sc-cvxAMf KUaPI"><div class="sc-eirqVv gMXsZh" data-tip="true" data-for="tooltip_components_c4de1411-e458-4f5c-9a83-ec4ab1b492d0" currentitem="false"><i color="rgba(0,0,0,0.7)" sizevalue="24px" role="button" tabindex="0" class="rmwc-icon google-material-icons sc-gKAaRy gmMscQ sc-gefSNk jJLVTk">chevron_left</i><div class="__react_component_tooltip t0af1d0b5-3ba2-43fc-920e-4adec4eae133 place-top type-dark" id="tooltip_components_c4de1411-e458-4f5c-9a83-ec4ab1b492d0" data-id="tooltip" style="left: 308px; top: 192px;"><style aria-hidden="true">
+  	.t0af1d0b5-3ba2-43fc-920e-4adec4eae133 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.t0af1d0b5-3ba2-43fc-920e-4adec4eae133.place-top {
+        margin-top: -10px;
+    }
+    .t0af1d0b5-3ba2-43fc-920e-4adec4eae133.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .t0af1d0b5-3ba2-43fc-920e-4adec4eae133.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .t0af1d0b5-3ba2-43fc-920e-4adec4eae133.place-bottom {
+        margin-top: 10px;
+    }
+    .t0af1d0b5-3ba2-43fc-920e-4adec4eae133.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .t0af1d0b5-3ba2-43fc-920e-4adec4eae133.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .t0af1d0b5-3ba2-43fc-920e-4adec4eae133.place-left {
+        margin-left: -10px;
+    }
+    .t0af1d0b5-3ba2-43fc-920e-4adec4eae133.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .t0af1d0b5-3ba2-43fc-920e-4adec4eae133.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .t0af1d0b5-3ba2-43fc-920e-4adec4eae133.place-right {
+        margin-left: 10px;
+    }
+    .t0af1d0b5-3ba2-43fc-920e-4adec4eae133.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .t0af1d0b5-3ba2-43fc-920e-4adec4eae133.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  </style><div class="sc-lbVvki IEnHC">Hide tree</div></div></div><h5 class="sc-bkbkJK sc-iemWCZ sc-iBsUks dWSziQ hKymwP dlGvhF">1.npy<span class="sc-iWtLIH fdkNea">(1.92 MB)</span></h5><div class="sc-eirqVv gMXsZh" data-tip="true" data-for="tooltip_components_2d3e1d28-1980-448c-b95b-ff88e1763988" currentitem="false"><i color="rgba(0,0,0,0.7)" sizevalue="24px" role="button" tabindex="0" class="rmwc-icon google-material-icons sc-gKAaRy gmMscQ sc-gefSNk jxNjao">get_app</i><div class="__react_component_tooltip tccde1f4a-9d47-4c3d-997d-09fe61a267a4 place-top type-dark" id="tooltip_components_2d3e1d28-1980-448c-b95b-ff88e1763988" data-id="tooltip"><style aria-hidden="true">
+  	.tccde1f4a-9d47-4c3d-997d-09fe61a267a4 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.tccde1f4a-9d47-4c3d-997d-09fe61a267a4.place-top {
+        margin-top: -10px;
+    }
+    .tccde1f4a-9d47-4c3d-997d-09fe61a267a4.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .tccde1f4a-9d47-4c3d-997d-09fe61a267a4.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .tccde1f4a-9d47-4c3d-997d-09fe61a267a4.place-bottom {
+        margin-top: 10px;
+    }
+    .tccde1f4a-9d47-4c3d-997d-09fe61a267a4.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .tccde1f4a-9d47-4c3d-997d-09fe61a267a4.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .tccde1f4a-9d47-4c3d-997d-09fe61a267a4.place-left {
+        margin-left: -10px;
+    }
+    .tccde1f4a-9d47-4c3d-997d-09fe61a267a4.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .tccde1f4a-9d47-4c3d-997d-09fe61a267a4.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .tccde1f4a-9d47-4c3d-997d-09fe61a267a4.place-right {
+        margin-left: 10px;
+    }
+    .tccde1f4a-9d47-4c3d-997d-09fe61a267a4.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .tccde1f4a-9d47-4c3d-997d-09fe61a267a4.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  </style><div class="sc-lbVvki IEnHC">Download</div></div></div><div class="sc-eirqVv gMXsZh" data-tip="true" data-for="tooltip_components_1ab696b7-eb30-49cd-93ed-33e26a8a6980" currentitem="false"><i color="rgba(0,0,0,0.7)" sizevalue="24px" role="button" tabindex="0" class="rmwc-icon google-material-icons sc-gKAaRy gmMscQ sc-gefSNk jxNjao">fullscreen</i><div class="__react_component_tooltip t325e117e-4a34-4d7d-ac3e-2f1309602272 place-top type-dark" id="tooltip_components_1ab696b7-eb30-49cd-93ed-33e26a8a6980" data-id="tooltip"><style aria-hidden="true">
+  	.t325e117e-4a34-4d7d-ac3e-2f1309602272 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.t325e117e-4a34-4d7d-ac3e-2f1309602272.place-top {
+        margin-top: -10px;
+    }
+    .t325e117e-4a34-4d7d-ac3e-2f1309602272.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .t325e117e-4a34-4d7d-ac3e-2f1309602272.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .t325e117e-4a34-4d7d-ac3e-2f1309602272.place-bottom {
+        margin-top: 10px;
+    }
+    .t325e117e-4a34-4d7d-ac3e-2f1309602272.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .t325e117e-4a34-4d7d-ac3e-2f1309602272.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .t325e117e-4a34-4d7d-ac3e-2f1309602272.place-left {
+        margin-left: -10px;
+    }
+    .t325e117e-4a34-4d7d-ac3e-2f1309602272.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .t325e117e-4a34-4d7d-ac3e-2f1309602272.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .t325e117e-4a34-4d7d-ac3e-2f1309602272.place-right {
+        margin-left: 10px;
+    }
+    .t325e117e-4a34-4d7d-ac3e-2f1309602272.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .t325e117e-4a34-4d7d-ac3e-2f1309602272.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  </style><div class="sc-lbVvki IEnHC">Maximize view</div></div></div></div><div class="sc-fZaoGu bQtkof"></div><div class="sc-dmzoHF ceXCCt"><h6 class="sc-dIvrsQ sc-hHEiqL sc-eiFrKY kSVYRu ccTnQh hNXowI">Competition Rules</h6><img src="./Bird audio detection _ Kaggle_files/accept_comp_rules.png" class="sc-fOTLLD imNXpT"><p class="sc-bCwfaz sc-iwajpm sc-gKZOOW fDOXIS kydRHc GTDON">To see this data you need to agree to the <a href="https://www.kaggle.com/c/bird-audio-detection/rules" class="sc-iBzEeX sc-efHYUO dGLXPo jtJktC">competition rules</a>.<br>Please sign in or register to accept the rules.</p><button class="sc-eEVmNe evMPpD" tabindex="0" role="button"><span class="sc-jJMGnK sc-hiKfDv lkfHZi dRsyqq">Sign In</span></button></div></div></div></div></div><div role="alertdialog" aria-modal="true" class="sc-cvdZrU dpthPX mdc-dialog"><div class="mdc-dialog__container"><div class="mdc-dialog__surface"><div class="sc-kzVmuX tLnHL"><button aria-label="close" class="sc-jSFjdj SCuyd sc-gHAgDl fifVoh google-material-icons">close</button><div class="sc-beTHAO kbjdfN"><div class="sc-fsjynb PNjHY"><div _size="xlarge" class="rmwc-circular-progress rmwc-circular-progress--size-xlarge rmwc-circular-progress--indeterminate rmwc-circular-progress--thickerstroke"><svg class="rmwc-circular-progress__circle" viewBox="0 0 48 48"><circle class="rmwc-circular-progress__path" cx="24" cy="24" r="20"></circle></svg></div></div></div></div></div></div><div class="mdc-dialog__scrim"></div></div></div><div role="alertdialog" aria-modal="true" class="sc-cvdZrU dpthPX mdc-dialog"><div class="mdc-dialog__container"><div class="mdc-dialog__surface"><h2 class="sc-dIsUp sc-bqGGPW sc-fTZpSt eCPBNe iPexDg bcvdhv">Please read the competition rules</h2><div class="sc-fKTysn csNSLp"><a role="button" href="https://www.kaggle.com/c/bird-audio-detection/rules" target="_blank"><img src="./Bird audio detection _ Kaggle_files/thumb76_76.png" alt="Competition Rules" class="sc-cTEyvq eUMOPo"></a><p class="sc-kfYoZR sc-fKgJPI jaxPpm cxbltl"><a href="https://www.kaggle.com/c/bird-audio-detection/rules" target="_blank" class="sc-iBzEeX sc-efHYUO dGLXPo jtJktC">Bird audio detection Rules</a></p></div><div class="sc-bTJQgd sc-fIbCpR crMrTS gljkfE">By clicking on the "I Understand and Accept" button below, you agree to be bound by the competition rules.</div><div class="sc-hQYpqk cDuRCe"><button class="sc-eEVmNe evMPpD" tabindex="0" role="button"><span class="sc-jJMGnK sc-hiKfDv lkfHZi dRsyqq">I Understand and Accept</span></button></div></div></div><div class="mdc-dialog__scrim"></div></div></div></div><div aria-live="assertive" aria-atomic="true" aria-hidden="true" class="sc-lahOFi hxQMhi mdc-snackbar"><div class="mdc-snackbar__surface"><div role="status" aria-live="polite" class="mdc-snackbar__label"><div style="display: none;"></div></div><div class="mdc-snackbar__actions"></div></div></div><div id="nav-footer" class="sc-dwxYdI iEWGFn"></div></div><div class="sc-EhTUr fyeWZK"><div class="sc-bdnxRM dHFIQf"><div class="sc-gtsrHT jOwbqk">We use cookies on Kaggle to deliver our services, analyze web traffic, and improve your experience on the site. By using Kaggle, you agree to our use of cookies.</div><div class="sc-dlnjwi fTtXFy"><div class="sc-hKFxyN brnUiQ">Got it</div><a href="https://www.kaggle.com/cookies" class="sc-eCApnc iylGhi"><div class="sc-hKFxyN brnUiQ">Learn more</div></a></div></div></div><div aria-live="assertive" aria-atomic="true" aria-hidden="true" class="sc-hHJmnm dGIVRW mdc-snackbar mdc-snackbar--leading"><div class="mdc-snackbar__surface"><div role="status" aria-live="polite" class="mdc-snackbar__label"><div style="display: none;"></div></div><div class="mdc-snackbar__actions"></div></div></div></div></div>
+<div data-component-name="NavigationContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"navigationType":"BOTH_NAV"});performance && performance.mark && performance.mark("NavigationContainer.componentCouldBootstrap");</script>
+<div id="site-body" class="hide">
+    
+
+
+<div data-component-name="CompetitionContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"isOngoingCompetition":false,"competitionId":23645,"competitionType":"prediction","competitionTitle":"Bird audio detection","briefDescription":"Detect if a short audio segment has a bird sound in it. ","competitionHeaderImageUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/23645/logos/header.png?t=2020-10-29-14-11-00","organizationId":0,"organizationName":null,"organizationThumbnailUrl":null,"hasAcceptedRules":false,"dateEnabled":"2020-10-30T07:59:22.257Z","deadline":"2020-12-06T23:59:00Z","mergerDeadline":"2020-12-06T23:59:00Z","newEntrantDeadline":null,"rewardQuantity":0.0,"rewardTypeName":null,"totalTeams":90,"isInClass":true,"hostSegment":"inClass","canEdit":false,"canEditMetadata":false,"rules":{"id":110890,"postId":7591461,"content":"**Note bold:** Violation of the rules listed here, will lead to the rejection of your submission, irrespectively of the score or anything else. \n\nFor your participation to this InClass Kaggle competition, you are not allowed to: \n\n- Use any other data than the data provided in this InClass Kaggle competition.\n- Use pre-trained models, audio or general models. \n- Only teams of two (2) people are allowed.","mimeType":"text/markdown","name":"rules","isPublished":null},"dataIntro":{"id":110887,"postId":7591458,"content":"# Testing data of the competition\n\nHere you can find the testing data of the competition. For a explanation of the data, please refer to the [Datasets page](https://www.kaggle.com/c/bird-audio-detection/overview/datasets). ","mimeType":"text/markdown","name":"data-description","isPublished":null},"competitionSlug":"bird-audio-detection","numPrizes":1,"leaderboardPercentage":50,"hasLimitedParticipation":true,"discussion":{"canDownvote":false,"dataUrl":"/forums/963142/topics.json","id":963142,"showSubscribeButton":false,"isSubscribed":false,"subscription":"unsubscribe","paramValues":{"page":1,"search":null,"group":"all","sortBy":"hot","category":"all"}},"competitionThumbnailImageUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/23645/logos/thumb76_76.png?t=2020-10-29-14-04-27","newTopic":{"allowAttachments":false,"authorTier":"novice","authorType":"topic","forumId":963142,"parentName":"Bird audio detection","parentUrl":"/c/bird-audio-detection/discussion","isPrivate":false},"numScoredSubmissions":2,"maxDailySubmissions":5,"maxDailySubmissionsResetDate":"2022-01-04T00:00:00Z","remainingDailySubmissions":null,"totalSolutionRows":4512,"team":null,"maxTeamSize":2147483647,"topicTitle":null,"totalCompetitors":164,"totalEntries":1509,"countsTowardsRanking":false,"countsTowardsTiers":false,"evaluationAlgorithm":{"id":5,"abbreviation":"AUC","name":"Area Under Receiver Operating Characteristic Curve","description":"Measures discrimination. Calculates how well an algorithm separates true positives from false positives. Overall good metric for classification problems. Has range [0.5, 1.0]","isMax":true,"isPublic":true,"submissionFileFormatId":0,"competitionId":0,"requiresSameRowCountInSubmissionAndSolution":true,"solutionSchema":"\u003cdataFrameSchema\u003e\u003ccolumnDefinitions\u003e\u003ccolumnDefinition name=\u0022Id\u0022 isRequired=\u0022true\u0022 isKey=\u0022true\u0022 requiredDataType=\u0022System.Reflection.Missing\u0022 /\u003e\u003ccolumnDefinition name=\u0022Expected\u0022 allowMultipleColumns=\u0022true\u0022 isRequired=\u0022true\u0022 requiredDataType=\u0022System.Double\u0022 /\u003e\u003c/columnDefinitions\u003e\u003c/dataFrameSchema\u003e","submissionSchema":"\u003cdataFrameSchema\u003e\u003ccolumnDefinitions\u003e\u003ccolumnDefinition name=\u0022Id\u0022 isRequired=\u0022true\u0022 isKey=\u0022true\u0022 requiredDataType=\u0022System.Reflection.Missing\u0022 /\u003e\u003ccolumnDefinition name=\u0022Predicted\u0022 allowMultipleColumns=\u0022true\u0022 isRequired=\u0022true\u0022 requiredDataType=\u0022System.Double\u0022 /\u003e\u003c/columnDefinitions\u003e\u003c/dataFrameSchema\u003e","parametersSchema":"\u003cparametersSchema type=\u0022Kaggle.Metrics.EmptyEvaluationAlgorithmParameters\u0022 /\u003e","dateModified":"2021-12-14T18:07:28.8945573Z","requiresSpecialHandling":false,"isEnvironment":false,"environmentConfiguration":null,"environmentNumPlayersSpec":null,"environmentRenderType":"json"},"allowPrivateLeaderboardDisplay":true,"isCreatingCompetition":false,"pages":[{"id":110888,"postId":7602789,"content":"# Bird Audio Detection inClass Kaggle Challenge\n\n### Welcome to the inClass Kaggle competition of the DATA.ML.200-2020-2021-1 Pattern Recognition and Machine Learning course.\n\nWildlife monitoring is an important environmental task, where different monitoring systems are deployed in remote areas, in order to collect data of wildlife in vivo. Audio seems to be a very attractive modality, since an audio recording is not affected by different lighting conditions and the, typical, dense vegetation. After having recorded the audio data, then scientists can start process them. \n\nOne of the difficulties of processing audio data is that a person has to listen the whole audio recording. This is in contrast with an image, where a person can look an image at one glance, and then annotate it. For example, by just looking an image one can, usually, say quite fast if there is a bird in it. Though, one has to listen an audio file until they listen a bird. The above clearly indicates that if there is a system to quickly decide if an audio segment has or not at least one bird in it, then a first and quick filtering could be performed overt lots of audio samples. Afterwards, the audio samples with bird sounds can be furthered processed by the corresponding scientists.\n\nThis competition is about deciding if an audio sample of 10 seconds has a bird sound in it or not, and is based on the [Bird Audio Detection task](http://dcase.community/challenge2018/task-bird-audio-detection), of the DCASE 2018 Challenge. The evaluation will be based on the same metric as in the Bird Audio Detection task, though a subset of the dataset will be used here. \n\nFor information and instruction on how to acquire and use the datasets, please see the [Datasets page](https://www.kaggle.com/c/bird-audio-detection/overview/datasets). For information about the evaluation of your methods, please see the [Evaluation page](https://www.kaggle.com/c/bird-audio-detection/overview/evaluation). You can find some tips, tricks, and guidelines at the [corresponding page](https://www.kaggle.com/c/bird-audio-detection/overview/tips-tricks-and-some-guidelines). \n\nFinally, make sure that you read and accept the rules at the [Rules page](https://www.kaggle.com/c/bird-audio-detection/rules) of the competition. ","mimeType":"text/markdown","name":"Description","isPublished":true},{"id":111052,"postId":7803383,"content":"# Data and Datasets for Bird Audio Detection InClass Kaggle competition\n\nThree different datasets will be given, two to be used for the optimization and one for the evaluation of your methods. You will have to download the training datasets from provided links, and the evaluation dataset from the data in this inClass Kaggle competition. \n\n## Training datasets\n\nTraining datasets consist of 10 second long audio samples, and associated labels for each audio sample. The labels are in the form \u00220\u0022 or \u00221\u0022, where \u00221\u0022 means that there is a bird sound in the 10 second long audio sample. \n\n### Obtaining the training datasets\n\nYou can get the training datasets from: \n\n- Dataset 1, Field recordings, worldwide (\u0022freefield1010\u0022) dataset: [audio](https://archive.org/download/ff1010bird/ff1010bird_wav.zip) (5.8 GB) and [labels](https://ndownloader.figshare.com/files/10853303). If the direct download is not working good for you, maybe you can try this [bittorrent link](https://archive.org/download/ff1010bird/ff1010bird_archive.torrent). \n- Dataset 2, Crowdsourced dataset, UK (\u0022warblrb10k\u0022) dataset: [audio](https://archive.org/download/warblrb10k_public/warblrb10k_public_wav.zip) (4.3 GB) and [labels](https://ndownloader.figshare.com/files/10853306). If the direct download is not working good for you, maybe you can try this [bittorrent link](https://archive.org/download/warblrb10k_public/warblrb10k_public_archive.torrent)\n\nThe above two datasets are the first two datasets used in the Bird Audio Detection task of DCASE2018 Challenge. \n\n### Using the training datasets\n\nFor this competition, you have to create a method that takes as an input a 10 second long audio sample, and outputs the probability of having a bird audio in the input audio sample. \n\nYou are strongly advised to not use raw audio data as the input to your method. Instead, you should extract some audio features for the audio sample, and use these features as input to your method. A typical feature is the Mel band energies, either as mel band energies or log-scaled (referred to as log-mel band energies). To extract these features, you can use the [librosa Python library](https://librosa.org/doc/latest/index.html). \n\nSpecifically, you will need the [function to load audio](https://librosa.org/doc/latest/generated/librosa.load.html#librosa.load) and the [function to extract the mel band energies](https://librosa.org/doc/latest/generated/librosa.feature.melspectrogram.html#librosa.feature.melspectrogram). Then, you can just call the `log` function of `numpy`, in order to have log-mel band energies. \n\n\n## Testing dataset\n\nThe testing dataset is the \u0022Bird Vocalisation Activity (BiVA) database: annotated soundscapes from the Chernobyl Exclusion Zone\u0022 [1], which contains data supplied by Natural Environment Research Council, and is available under the [Open Government Licence v3](http://www.nationalarchives.gov.uk/doc/open-government-licence).\n\n### Obtaining the testing dataset\n\nYou can access the dataset from the [Data tab](https://www.kaggle.com/c/bird-audio-detection/data) of this InClass Kaggle competition. For the needs of this competition, we already have processed the evaluation dataset, splitting it in 10 second long audio files. For your convenience, all audio files are already saved as numpy arrays. This means that you can load the data using numpy\u0027s load function. \n\n### Using the testing dataset\n\nFor the testing dataset, you will have to extract the same features as you did for the training datasets. Then, you will have to use the extracted features as input to your system, and get the outputs for each example. \n\nIn order to have your method evaluated, you will have to submit a CSV file with columns: \n\n- Predicted, where you should have the probability of having a bird audio in the input audio sample. \n- ID, where you should have the ID of the audio file that corresponds to the prediction of your system. \n\n## References\n\n[1] Kendrick, P.; Barçante, L.; Beresford, N.A.; Gashchak, S.; Wood, M.D. (2018). Bird Vocalisation Activity (BiVA) database: annotated soundscapes from the Chernobyl Exclusion Zone NERC Environmental Information Data Centre. https://doi.org/10.5285/be5639e9-75e9-4aa3-afdd-65ba80352591","mimeType":"text/markdown","name":"Datasets","isPublished":true},{"id":111053,"postId":7768437,"content":"# Evaluation of submitted results\n\nThe submitted results will be evaluated according to the [AUC (Area under the curve)](https://en.wikipedia.org/wiki/Receiver_operating_characteristic#Area_under_the_curve) metric. \n\nYou submission must be a CSV file, having two columns: \n\n1. A column named as \u0022ID\u0022, which will have the ID of the audio file (i.e. integers starting form 0 until 4511). ID values do not have to be sorted.\n2. A column named \u0022Predicted\u0022, which will have the output of your system for the corresponding audio file. The output of your system should not be thresholded. That is, the \u0022Predicted\u0022 column should contain the non-thresholded output of your system (i.e. the probability). ","mimeType":"text/markdown","name":"Evaluation","isPublished":true},{"id":111059,"postId":7776646,"content":"# Tips, Tricks, and Guidelines\n\n## Most important tip\n\nObserve your data! Take some time to listen the audio of the training datasets and understand the differences of the different classes, some noise/miss-annotations (if any), and the nature (in general) of your data\n\n## Input data pre-processing\n\n### Scale your data\nIf you observe  your data, you will see that the scale of the values differ for the various examples. A good practice for this competition, is to scale your data between -1 and 1. To do this, you can apply the following snippet: \n\n```python\n# assumed that you have:\n# import numpy as np\n\naudio_data = audio_data * 1/np.max(np.abs(audio_data))\n```\n\n### FFT Points, Overlap, and Amount of Mel bands\n\nTypical values for the amount of FFT points, for 44.1 kHz, is 1024.  The typical amount of overlap is 50% (i.e. 512 samples). Also, do not over do it with the Mel bands. 32 to 64 Mel bands will be enough for the task that you have here. Also, make sure that you use 44100/2 as the maximum frequency for the Mel filters. \n\nThe above are summarized in the following snippet for extracting the features: \n\n```python\nimport librosa\n\nkwargs_for_mel = {\u0027n_mels\u0027: 40}\nx = librosa.feature.melspectrogram(\n    y=audio_data, \n    sr=44100, \n    n_fft=1024, \n    hop_length=512, \n    **kwargs_for_mel)\n```\n\n### Shape of features\n\nIf you use the above snippets, then the shape of the features (i.e. `x`) will be `n_mels x time`. Usually and in audio, the shape of the data is `time x features`, i.e. `time x n_mels`. This doesn\u0027t change anything, if you know what each dimension of the features represents. Though, it will probably create inconsistency if you try to re-create existing methods/models. For that reason, you might want to consider doing the following: \n\n```python\nx = x.T\n```","mimeType":"text/markdown","name":"Tips, tricks, and some guidelines","isPublished":true},{"id":112463,"postId":7666973,"content":"# Useful Papers\n\nIn this section you can find different useful papers that are focusing on BAD and sound event detection. \n\n## Bird Audio Detection \n\n1. E. Çakır, S. Adavanne, G. Parascandolo, K. Drossos, and T. Virtanen, \u0022Convolutional recurrent neural networks for bird audio detection,\u0022 in EUSIPCO 2020, link: https://arxiv.org/pdf/1703.02317.pdf\n\n2. S. Adavanne, K. Drossos, E. Çakir, and T. Virtanen, \u0022Stacked convolutional and recurrent neural networks for bird audio detection,\u0022 in EUSIPCO 2020, link: https://arxiv.org/pdf/1706.02047.pdf\n\n3. D. Stowell, M. D. Wood, H. Pamuła, Y. Stylianou, and H. Glotin, \u0022Automatic acoustic detection of birds through deep learning: The first Bird Audio Detection challenge,\u0022 in Methods in Ecology and Evolution, No. 9 (168), 2018, link: https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210X.13103\n\n## Sound event detection\n\nTO BE FILLED","mimeType":"text/markdown","name":"Useful papers","isPublished":true}],"databundleVersionId":1638770,"databundleVersions":[],"submissionsAreDisabled":false,"hasLeaderboard":true,"finalLeaderboardHasBeenVerified":true,"witholdFinalLeaderboardUntilItHasBeenVerified":false,"isPrivate":false,"publicLeaderboardMessage":"","privateLeaderboardMessage":"","disablePrizeIndicator":false,"hasKernels":true,"hasSolutionFile":true,"userRankMultiplier":0.0,"needsPhoneVerification":false,"scoringIsMax":true,"rawDataUrl":"/c/23645/publicleaderboarddata.zip","canSubmitModel":false,"mySubmissionsCount":0,"mostRecentSubmissionStatus":null,"isCompetitionHost":false,"allowTeamMergers":true,"hostSegments":[],"hostSegmentTitle":"InClass","canParticipate":false,"isCompetitionPending":false,"competitionHasLaunched":true,"competitionHasEnded":true,"shareToken":null,"ownerTwitter":null,"externalCompetitionThumbnailImageUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/23645/logos/thumb76_76.png?t=2020-10-29-14-04-27","competitionUrl":"/c/bird-audio-detection","mergerDeadlineHasPassed":true,"categories":{"tags":[{"id":0,"name":"auc","fullPath":"","listingUrl":"","description":"Measures discrimination. Calculates how well an algorithm separates true positives from false positives. Overall good metric for classification problems. Has range [0.5, 1.0]","datasetCount":0,"competitionCount":0,"notebookCount":0,"tagUrl":"","displayName":"","fontAwesomeIcon":""}],"type":"competition"},"competitionHostClaims":{"readSettings":false,"writeSettings":false,"writeDescriptions":false,"writeDeadline":false,"readSubmissions":false,"writeSubmissions":false,"invalidateSubmissions":false,"rescoreSubmissions":false,"readEvaluation":false,"writeEvaluation":false,"writeTeamVisibility":false,"updateCategory":false,"launchCompetition":false,"writeBenchmarks":false,"writeTeamMergers":false,"isCompetitionHost":false},"newEntrantDeadlineHasPassed":false,"onlyAllowKernelSubmissions":false,"requiresSameRowCountInSubmissionAndSolution":true,"enableLazyLeaderboard":false,"rulesRequired":true,"usesSynchronousReruns":false,"modelFileName":null,"modelFileSizeBytes":0,"disableKernelsPublishing":false,"@wf": "Competitions.Legacy.CompetitionDtoWireFormat"});performance && performance.mark && performance.mark("CompetitionContainer.componentCouldBootstrap");</script>
+
+</div>
+
+
+
+
+  </main>
+
+
+
+<div class="sc-fDUjSr iQDbIO sc-kRUtZv kISNZb mdc-menu-surface"><div role="document"><div class="sc-jWbMRg iTFtcX"><div tabindex="0" class="sc-jxfuRQ cXdxmm"><h5 class="sc-bkbkJK sc-iemWCZ dWSziQ hKymwP">No Active Events</h5><br><p class="sc-bCwfaz sc-iwajpm jLqmUy kydRHc">Create notebooks  and keep track of their status here.</p><br><div class="sc-cEzlbd dnuvIa"><a href="https://www.kaggle.com/code/welcome" target="_blank" tabindex="0" class="sc-jXcxbT eINlL"><button class="sc-eEVmNe ehZbNQ" tabindex="-1" role="button"><i color="#FFFFFF" sizevalue="18px" class="rmwc-icon google-material-icons sc-gKAaRy eoZVBq">add</i><span class="sc-jJMGnK sc-hiKfDv lkfHZi dRsyqq">New Notebook</span></button></a></div></div><ul class="km-list"><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-hQAVcu dCAPSu"><a class="sc-jgPyTC fuJtcf"><div class="sc-khIgEk hQhHpX"><div class="sc-hTRkXV enlJuL"><div class="sc-fulamw cQCBvw"><i emphasis="high" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy iExPwm sc-xQvhf lbZgxt">auto_awesome_motion</i><div color="#FAE041" class="sc-cskzLS CQKPy">0</div></div></div><div class="sc-iCoGMd sc-dlMDgC sc-iNiQyp cHRTxu kpPvTx hLSLbm"><p class="sc-bCwfaz sc-iwajpm eTBoyV kydRHc">0 Active Events</p></div></div></a><div class="sc-gSYDnn eHfJyT"><i emphasis="high" sizevalue="24px" role="button" tabindex="0" class="rmwc-icon google-material-icons sc-gKAaRy iExPwm">expand_more</i></div></div></li></ul></div></div></div><div aria-hidden="true" class="mdc-menu sc-jHNicF iXyCox mdc-menu-surface"><div role="menu" class="mdc-list mdc-menu__items mdc-list"><div role="menuitem" tabindex="0" class="sc-GvhzO bpDBPH mdc-ripple-upgraded sc-GvhzO bpDBPH mdc-list-item"><div class="sc-bXexck kmvQjn"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy iExPwm sc-gsWcmt grZHMV">bookmark_border</i><p class="sc-bCwfaz sc-iwajpm jLqmUy kydRHc">Bookmark</p></div></div></div></div></body></html>
